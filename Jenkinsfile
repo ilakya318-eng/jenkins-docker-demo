@@ -11,17 +11,19 @@ pipeline {
             }
         }
 
-        stage('Install Dependencies') {
-            steps {
-                bat 'python -m pip install -r requirements.txt'
-            }
-        }
+        
+stage('Install Dependencies') {
+    steps {
+        bat '"C:/Users/vidhy/AppData/Local/Python/pythoncore-3.14-64/python.exe" -m pip install -r requirements.txt'
+    }
+}
 
-        stage('Run Tests') {
-            steps {
-                bat 'python -m pytest test_app.py -v'
-            }
-        }
+stage('Run Tests') {
+    steps {
+        bat '"C:/Users/vidhy/AppData/Local/Python/pythoncore-3.14-64/python.exe" -m pytest test_app.py -v'
+    }
+}
+
 
         stage('Build Docker Image') {
             steps {
